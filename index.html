@@ -2,29 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SPF Guru - Coming Soon</title>
+  <title>SPF Guru - Coming soon...</title>
   <style>
-    /* Centre the image neatly on a white background */
+    /* Centre everything on a white background */
     body {
       display: flex;
-      justify-content: centre;
-      align-items: centre;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
       margin: 0;
       background: #fff;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* Constrain the logo size */
+    #logo {
+      max-height: 700px;
+      width: auto;          /* preserve aspect ratio */
+    }
+
+    /* “Coming soon…” headline */
+    h1 {
+      margin-top: 1.5rem;
+      font-size: 3rem;
+      font-weight: 600;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <img id="logo" alt="SPF Guru Logo">
 
+  <h1>Coming soon&hellip;</h1>
+
   <script>
     (function () {
-      const images = ["spf-guru-logo6.png", "spf-guru-logo7.png"]; // add paths if they live in a sub-folder
-      const choice = images[Math.floor(Math.random() * images.length)]; // pick 0 or 1
+      const images = [
+        "spf-guru-logo6.png",
+        "spf-guru-logo7.png"
+      ];                         // add folder paths if required
+      const choice = images[Math.floor(Math.random() * images.length)];
       document.getElementById("logo").src = choice;
     })();
   </script>
-  <h1>Coming soon...</h1>
 </body>
 </html>
