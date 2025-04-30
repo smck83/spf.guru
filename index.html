@@ -1,4 +1,30 @@
-<center>
-<img src='spf-guru-logo7.png' width='*' height='700px' />
-<h1>Coming soon...</h1>
-</center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPF Guru - Coming Soon</title>
+  <style>
+    /* Centre the image neatly on a white background */
+    body {
+      display: flex;
+      justify-content: centre;
+      align-items: centre;
+      height: 100vh;
+      margin: 0;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <img id="logo" alt="SPF Guru Logo">
+
+  <script>
+    (function () {
+      const images = ["spf-guru-logo-6.png", "spf-guru-logo-7.png"]; // add paths if they live in a sub-folder
+      const choice = images[Math.floor(Math.random() * images.length)]; // pick 0 or 1
+      document.getElementById("logo").src = choice;
+    })();
+  </script>
+  <h1>Coming soon...</h1>
+</body>
+</html>
