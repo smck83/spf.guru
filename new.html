@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPF Guru - Coming soon...</title>
+  <style>
+    /* Centre everything on a white background */
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #fff;
+      font-family: system-ui, sans-serif;
+      color: #333;
+    }
+
+    /* Speech-bubble styling, bottom pointer */
+    #spfCommandment {
+      position: relative;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+      padding: 1.5em;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    /* border “shadow” for the pointer */
+    #spfCommandment::before {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 12px 12px 0;
+      border-style: solid;
+      border-color: #ddd transparent;
+      display: block;
+      width: 0;
+      height: 0;
+    }
+    /* main pointer */
+    #spfCommandment::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: #f9f9f9 transparent;
+      display: block;
+      width: 0;
+      height: 0;
+    }
+
+    /* Constrain the logo size */
+    #logo {
+      max-height: 200px;
+      width: auto;
+    }
+
+    /* “Coming soon…” headline */
+    h1 {
+      margin: 1.5rem 0 1rem;
+      font-size: 3rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="spfCommandment">Loading wisdom…</div>
+
+  <img id="logo" alt="SPF Guru Logo">
+
+  <h1>Coming soon…</h1>
+
+  <script>
+    (function() {
+      // 1. Random logo
+      const images = [
+        "spf-guru-logo6.png",
+        "spf-guru-logo7.png"
+      ];
+      document.getElementById("logo").src =
+        images[Math.floor(Math.random() * images.length)];
+
+      // 2. Random SPF Guru Commandment
+      const commandments = [
+        'Thou shalt begin thy SPF record with “v=spf1” and no other prefix shall grace thy domain.',
+        'Thou shalt publish but one SPF record per domain, for multiple incantations breed confusion.',
+        'Thou shalt terminate with an “all” mechanism, unless thou employest the “redirect=” modifier.',
+        'Thou shalt not append an “all” mechanism after “redirect=”, for the path must end in stillness.',
+        'Thou shalt count no more than ten DNS-resolving mechanisms or modifiers in thy graceful design.',
+        'Thou shalt count each “a”, “mx”, “ptr”, “include”, “exists”, and “redirect” as one DNS resolution.',
+        'Thou shalt remember that “ip4”, “ip6”, and “all” mechanisms incur no DNS cost to thy serenity.',
+        'Thou shalt employ only the qualifiers +, –, ~, or ?, that thy intentions remain clear.',
+        'Thou shalt default to “+” (pass) when no qualifier is expressly chosen by thy hand.',
+        'Thou shalt separate each mechanism and modifier with a single space for clarity and focus.',
+        'Thou shalt process thy SPF record from left to right, pausing at the first truth revealed.',
+        'Thou shalt ensure each MX record resolves to no more than ten A or AAAA addresses.',
+        'Thou shalt confine PTR lookups to ten returned names, and no more, lest chaos ensue.',
+        'Thou shalt avoid the deprecated “ptr” mechanism, as the Dalai Lama avoids the path of distraction.',
+        'Thou shalt “include” only those domains which bear valid SPF records and goodwill.',
+        'Thou shalt not summon “a” or “mx” mechanisms for hosts that dispatch thee no mail.',
+        'Thou shalt favor “ip4” and “ip6” mechanisms for thy own servers to preserve lookup serenity.',
+        'Thou shalt permit no more than two void lookups, that thy record remain resilient and pure.',
+        'Thou shalt keep thy record within a single 512-byte UDP packet, honoring ancient compatibility.',
+        'Thou shalt wield “redirect=” only once, placing it at the world’s end of thy record.',
+        'Thou shalt never cast multiple “redirect=” directives, for duplication shatters harmony.',
+        'Thou shalt use but one final “all”, declaring thy last judgment of all mail that remains.',
+        'Thou shalt test with “~all” in times of novice practice, and adopt “-all” when wisdom dawns.',
+        'Thou shalt heed caution with “-all”, for a single misstep may close the gates of deliverability.',
+        'Thou shalt inscribe each mechanism thus: [qualifier][mechanism][:value], in mindful precision.',
+        'Thou shalt eschew embedding comments within thy TXT string, that parsers may read with ease.',
+        'Thou shalt flatten deep “include” hierarchies, for too many layers obscure the inner light.',
+        'Thou shalt renew thy flattened lists oft, that no stale address lead thee astray.',
+        'Thou shalt reject default hosting templates—craft thy record to reflect thy true senders.',
+        'Thou shalt place the “exp” modifier only after the final “all”, unveiling news for errant souls.',
+        'Thou shalt verify the error-free nature of any “exp” macro, lest a permanent error befall.',
+        'Thou shalt test thy SPF record with stout DNS checkers before thou takest it to the masses.',
+        'Thou shalt watch thy DMARC reports for PermErrors, as the Dalai Lama watches the breath.',
+        'Thou shalt update thy SPF whenever new emissaries arise or old ones depart, embracing impermanence.',
+        'Thou shalt walk the Middle Path, balancing security, deliverability, and record simplicity.'
+      ];
+      const idx = Math.floor(Math.random() * commandments.length);
+      document.getElementById("spfCommandment").innerText = commandments[idx];
+    })();
+  </script>
+</body>
+</html>
