@@ -17,6 +17,48 @@
       color: #333;
     }
 
+    /* Speech-bubble styling, bottom pointer */
+    #spfCommandment {
+      position: relative;
+      max-width: 350px;
+      margin-bottom: 1.5rem;
+      padding: 1.5em;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    /* border “shadow” for the pointer */
+    #spfCommandment::before {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 12px 12px 0;
+      border-style: solid;
+      border-color: #ddd transparent;
+      display: block;
+      width: 0;
+      height: 0;
+    }
+    /* main pointer */
+    #spfCommandment::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: #f9f9f9 transparent;
+      display: block;
+      width: 0;
+      height: 0;
+    }
+
     /* Constrain the logo size */
     #logo {
       max-height: 200px;
@@ -30,23 +72,9 @@
       font-weight: 600;
       text-align: center;
     }
-
-    /* Random commandment box */
-    #spfCommandment {
-      max-width: 400px;
-      margin-bottom: 1.5rem;  /* space before the logo */
-      padding: 20px;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 1.2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
   </style>
 </head>
 <body>
-  <!-- Moved above the logo -->
   <div id="spfCommandment">Loading wisdom…</div>
 
   <img id="logo" alt="SPF Guru Logo">
@@ -55,7 +83,7 @@
 
   <script>
     (function() {
-      // Random logo selection
+      // 1. Random logo
       const images = [
         "spf-guru-logo6.png",
         "spf-guru-logo7.png"
@@ -63,7 +91,7 @@
       document.getElementById("logo").src =
         images[Math.floor(Math.random() * images.length)];
 
-      // Random SPF Guru Commandment
+      // 2. Random SPF Guru Commandment
       const commandments = [
         'Thou shalt begin thy SPF record with “v=spf1” and no other prefix shall grace thy domain.',
         'Thou shalt publish but one SPF record per domain, for multiple incantations breed confusion.',
